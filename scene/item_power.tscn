@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cn32k60hch7no"]
+
+[ext_resource type="Script" uid="uid://bbh66g68ijxtt" path="res://scene/goods_base.gd" id="1_kedb8"]
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_rsmix"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kedb8"]
+atlas = ExtResource("1_rsmix")
+region = Rect2(867, 1118, 68, 74)
+
+[node name="ItemPower" type="Node2D" unique_id=1875171408]
+script = ExtResource("1_kedb8")
+price_base = 200
+type = 1
+detail = "Strength drink. The Miner will reel up objects a littlefaster on the next level.The drink only lasts for one level."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=21776879]
+texture = SubResource("AtlasTexture_kedb8")

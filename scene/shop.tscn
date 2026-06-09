@@ -1,0 +1,472 @@
+[gd_scene format=3 uid="uid://cwodft88bq83u"]
+
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_iuafe"]
+[ext_resource type="Script" uid="uid://dh1hl8t0gqhl8" path="res://scene/shop.gd" id="1_prb2b"]
+[ext_resource type="Texture2D" uid="uid://lrj8xekgbgsa" path="res://resource/shopOwnerFrame/5.png" id="2_0wha2"]
+[ext_resource type="FontFile" uid="uid://de1kl6vtpuktx" path="res://resource/SourceHanSansSC-Bold.otf" id="2_4p3p6"]
+[ext_resource type="Texture2D" uid="uid://bof604umc4fae" path="res://resource/shopOwnerFrame/4.png" id="3_brg4d"]
+[ext_resource type="Texture2D" uid="uid://dee3mlf5ghqh1" path="res://resource/shopOwnerFrame/3.png" id="4_pd0vs"]
+[ext_resource type="Texture2D" uid="uid://rjnbegm82up1" path="res://resource/shopOwnerFrame/2.png" id="5_pd0vs"]
+[ext_resource type="Texture2D" uid="uid://dfgos36h4m01r" path="res://resource/shopOwnerFrame/1.png" id="6_prb2b"]
+[ext_resource type="PackedScene" uid="uid://jj38gudn4qr4" path="res://scene/item_bottle.tscn" id="9_tartn"]
+[ext_resource type="PackedScene" uid="uid://bvomdioum8ftp" path="res://scene/item_book.tscn" id="10_oh3n3"]
+[ext_resource type="PackedScene" uid="uid://cn32k60hch7no" path="res://scene/item_power.tscn" id="11_ayspg"]
+[ext_resource type="PackedScene" uid="uid://dpnnokrtrwu30" path="res://scene/item_bomb.tscn" id="12_dojno"]
+[ext_resource type="PackedScene" uid="uid://cokn56ewbv78i" path="res://scene/item_staw.tscn" id="13_guf26"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4p3p6"]
+atlas = ExtResource("1_iuafe")
+region = Rect2(842, 444, 177, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4p3p6"]
+animations = [{
+"frames": [{
+"duration": 10.0,
+"texture": ExtResource("2_0wha2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_brg4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pd0vs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0wha2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0wha2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pd0vs")
+}],
+"loop": false,
+"name": &"pleasant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0wha2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_prb2b")
+}],
+"loop": false,
+"name": &"wrath",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyq3k"]
+atlas = ExtResource("1_iuafe")
+region = Rect2(1, 631, 397, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iuafe"]
+atlas = ExtResource("1_iuafe")
+region = Rect2(1, 1, 642, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0wha2"]
+atlas = ExtResource("1_iuafe")
+region = Rect2(0, 141, 442, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brg4d"]
+atlas = ExtResource("1_iuafe")
+region = Rect2(403, 972, 97, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pd0vs"]
+atlas = ExtResource("1_iuafe")
+region = Rect2(726, 1006, 97, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh3n3"]
+atlas = ExtResource("1_iuafe")
+region = Rect2(536, 1418, 59, 89)
+
+[node name="Shop" type="Control" unique_id=1685360615]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_prb2b")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1023210378]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1429418996]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_4p3p6")
+stretch_mode = 1
+
+[node name="TextureRect2" type="AnimatedSprite2D" parent="TextureRect" unique_id=807370158]
+position = Vector2(1128, 384.00003)
+scale = Vector2(2.2105265, 2.2105272)
+sprite_frames = SubResource("SpriteFrames_4p3p6")
+animation = &"pleasant"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect" unique_id=1357205813]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4564694
+anchor_top = 0.18922223
+anchor_right = 0.83643883
+anchor_bottom = 0.39972228
+offset_left = -0.28082275
+offset_top = -0.2400055
+offset_right = -0.35998535
+offset_bottom = 7.919983
+texture = SubResource("AtlasTexture_uyq3k")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect/TextureRect3" unique_id=618166425]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.71300006
+offset_bottom = 0.08836365
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_4p3p6")
+theme_override_font_sizes/font_size = 22
+text = "Click on the items you want to buy. Click on 
+\"Next Level\" when you are ready to go on"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=230111138]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.006
+anchor_top = 0.711
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.6800003
+offset_top = 8.079987
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_iuafe")
+
+[node name="Label" type="Label" parent="TextureRect/TextureRect" unique_id=744982507]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.14400001
+anchor_top = 0.2
+anchor_right = 0.84400004
+anchor_bottom = 0.96000004
+offset_left = -0.32000732
+offset_right = -0.32006836
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.98039216, 0.9647059, 0.015686275, 1)
+theme_override_fonts/font = ExtResource("2_4p3p6")
+theme_override_font_sizes/font_size = 24
+autowrap_mode = 2
+
+[node name="TextureRect4" type="TextureRect" parent="TextureRect" unique_id=587301952]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.21212502
+anchor_top = 0.02261112
+anchor_right = 0.79812497
+anchor_bottom = 0.18361111
+offset_left = 0.47998047
+offset_top = -0.2800064
+offset_right = 0.39996338
+offset_bottom = -0.19999695
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_0wha2")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="TextureRect" unique_id=1718683177]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.8375
+anchor_top = 0.06688888
+anchor_right = 0.9738126
+anchor_bottom = 0.16711111
+offset_top = -0.15999603
+offset_right = 0.11999512
+offset_bottom = -0.3199997
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_brg4d")
+texture_pressed = SubResource("AtlasTexture_pd0vs")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="TextureRect/TextureButton" unique_id=1925038936]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_4p3p6")
+theme_override_font_sizes/font_size = 24
+text = "Next Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Item_5" type="TextureRect" parent="." unique_id=953848511]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.65000004
+anchor_top = 0.43300003
+anchor_right = 0.75000006
+anchor_bottom = 0.7777778
+offset_left = -0.00012207031
+offset_top = 0.23999023
+offset_right = -6.1035156e-05
+offset_bottom = -3.0517578e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="Item_5" unique_id=1751436661]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Item_Power" parent="Item_5/TextureButton" unique_id=1304543719 instance=ExtResource("9_tartn")]
+position = Vector2(64.00006, 112)
+scale = Vector2(2.5, 2.5)
+
+[node name="TextureRect" type="TextureRect" parent="Item_5/TextureButton" unique_id=303530687]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_oh3n3")
+
+[node name="Label" type="Label" parent="Item_5" unique_id=1943795100]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.83300006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.07998657
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.02745098, 0.7764706, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item_4" type="TextureRect" parent="." unique_id=499607730]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49499997
+anchor_top = 0.44400004
+anchor_right = 0.6000001
+anchor_bottom = 0.77766675
+offset_left = 6.4000015
+offset_top = 0.3199768
+offset_right = -6.1035156e-05
+offset_bottom = 0.07998657
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="Item_4" unique_id=63358649]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemBook" parent="Item_4/TextureButton" unique_id=455247289 instance=ExtResource("10_oh3n3")]
+position = Vector2(64, 112)
+scale = Vector2(1.8, 1.8)
+
+[node name="TextureRect" type="TextureRect" parent="Item_4/TextureButton" unique_id=1624734345]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_oh3n3")
+
+[node name="Label" type="Label" parent="Item_4" unique_id=1520629992]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.83300006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.07998657
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.02745098, 0.7764706, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item_2" type="TextureRect" parent="." unique_id=1286648653]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19500001
+anchor_top = 0.44400004
+anchor_right = 0.3
+anchor_bottom = 0.77766675
+offset_left = 6.4000015
+offset_top = 0.3199768
+offset_right = 3.0517578e-05
+offset_bottom = 0.07998657
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="Item_2" unique_id=1095350524]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemBottle" parent="Item_2/TextureButton" unique_id=1875171408 instance=ExtResource("11_ayspg")]
+position = Vector2(64, 112)
+scale = Vector2(2, 2)
+
+[node name="TextureRect" type="TextureRect" parent="Item_2/TextureButton" unique_id=1012484345]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_oh3n3")
+
+[node name="Label" type="Label" parent="Item_2" unique_id=1562525387]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.83300006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.07998657
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.02745098, 0.7764706, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item_1" type="TextureRect" parent="." unique_id=31239203]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.44400004
+anchor_right = 0.15
+anchor_bottom = 0.77766675
+offset_top = 0.3199768
+offset_bottom = 0.07998657
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Item_1" unique_id=2067602406]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.83300006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.07998657
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.02745098, 0.7764706, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Item_1" unique_id=64809596]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemBomb" parent="Item_1/TextureButton" unique_id=1429165231 instance=ExtResource("12_dojno")]
+position = Vector2(64, 112)
+scale = Vector2(2.5, 2.5)
+
+[node name="TextureRect" type="TextureRect" parent="Item_1/TextureButton" unique_id=956789434]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_oh3n3")
+
+[node name="Item_3" type="TextureRect" parent="." unique_id=1411901053]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.35
+anchor_top = 0.44400004
+anchor_right = 0.45
+anchor_bottom = 0.77766675
+offset_top = 0.3199768
+offset_bottom = 0.07998657
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="Item_3" unique_id=2127434730]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.8
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ItemStaw" parent="Item_3/TextureButton" unique_id=37230705 instance=ExtResource("13_guf26")]
+position = Vector2(64, 112)
+scale = Vector2(2.5, 2.5)
+
+[node name="TextureRect" type="TextureRect" parent="Item_3/TextureButton" unique_id=1366598412]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_oh3n3")
+
+[node name="Label" type="Label" parent="Item_3" unique_id=1806510214]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.83300006
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.07998657
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.02745098, 0.7764706, 0, 1)
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="animation_finished" from="TextureRect/TextureRect2" to="." method="_on_texture_rect_2_animation_finished"]
+[connection signal="pressed" from="TextureRect/TextureButton" to="." method="_on_texture_button_pressed"]

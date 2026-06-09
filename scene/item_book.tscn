@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bvomdioum8ftp"]
+
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_1toff"]
+[ext_resource type="Script" uid="uid://bbh66g68ijxtt" path="res://scene/goods_base.gd" id="1_qk2b3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk2b3"]
+atlas = ExtResource("1_1toff")
+region = Rect2(798, 1118, 69, 65)
+
+[node name="ItemBook" type="Node2D" unique_id=455247289]
+script = ExtResource("1_qk2b3")
+price_base = 80
+detail = "Rock Collectors book. Rocks will be worth three timesas much money on the next level. This is only goodfor one level."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=155226952]
+texture = SubResource("AtlasTexture_qk2b3")

@@ -1,0 +1,11 @@
+
+Rock Collectors book. Rocks will be worth three timesas much money on the next level. This is only goodfor one level.
+石头三倍值钱
+Strength drink. The Miner will reel up objects a littlefaster on the next level.The drink only lasts for one level.
+加速回收
+Diamond Polish. During the next level diamonds willbe worth more money. Only good for one level.
+钻石二倍值钱
+Lucky Clover.This will increase the chances of gettingsomething good out of the grab bags on the next level.This is only good for one level.
+增加从背包中获取更好物品的概率
+After you have grabbed onto something with yourclaw, press the up arrow to throw a pieceof dynamite at it and blow it up.
+炸掉回收物

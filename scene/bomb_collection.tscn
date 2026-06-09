@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c1mvm4g2628as"]
+
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_b2trl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2trl"]
+atlas = ExtResource("1_b2trl")
+region = Rect2(987, 814, 20, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jcsx"]
+atlas = ExtResource("1_b2trl")
+region = Rect2(398, 621, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86i85"]
+atlas = ExtResource("1_b2trl")
+region = Rect2(889, 1193, 44, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arfkr"]
+atlas = ExtResource("1_b2trl")
+region = Rect2(772, 1322, 55, 36)
+
+[node name="Root" type="Node2D" unique_id=960864449]
+
+[node name="Bomb_1" type="Sprite2D" parent="." unique_id=1791277149]
+visible = false
+texture = SubResource("AtlasTexture_b2trl")
+
+[node name="Bomb_2" type="Sprite2D" parent="." unique_id=937609210]
+visible = false
+texture = SubResource("AtlasTexture_6jcsx")
+
+[node name="Bomb_3" type="Sprite2D" parent="." unique_id=509176363]
+visible = false
+texture = SubResource("AtlasTexture_86i85")
+
+[node name="Bomb_4" type="Sprite2D" parent="." unique_id=16550637]
+texture = SubResource("AtlasTexture_arfkr")

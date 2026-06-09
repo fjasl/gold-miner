@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://jj38gudn4qr4"]
+
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_2thry"]
+[ext_resource type="Script" uid="uid://bbh66g68ijxtt" path="res://scene/goods_base.gd" id="1_gb1if"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gb1if"]
+atlas = ExtResource("1_2thry")
+region = Rect2(355, 947, 49, 56)
+
+[node name="ItemBottle" type="Node2D" unique_id=1304543719]
+script = ExtResource("1_gb1if")
+price_base = 150
+type = 4
+detail = "Diamond Polish. During the next level diamonds willbe worth more money. Only good for one level."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1397303984]
+texture = SubResource("AtlasTexture_gb1if")

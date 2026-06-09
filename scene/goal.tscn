@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://1jwsrcf74w4"]
+
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_5oceh"]
+[ext_resource type="Script" uid="uid://e5f770lpiik5" path="res://scene/goal.gd" id="1_kw3xy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw3xy"]
+atlas = ExtResource("1_5oceh")
+region = Rect2(0, 728, 200, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs1ml"]
+atlas = ExtResource("1_5oceh")
+region = Rect2(643, 1, 317, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y76q7"]
+atlas = ExtResource("1_5oceh")
+region = Rect2(0, 141, 442, 67)
+
+[node name="Goal" type="Control" unique_id=109444727]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kw3xy")
+
+[node name="BackColor" type="ColorRect" parent="." unique_id=608056933]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Gold" type="Sprite2D" parent="." unique_id=217986946]
+visible = false
+texture = SubResource("AtlasTexture_kw3xy")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2028791085]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -100.0
+offset_right = 225.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 100)
+texture = SubResource("AtlasTexture_qs1ml")
+
+[node name="GoalTitle" type="Label" parent="TextureRect" unique_id=1008773793]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 20.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 37
+text = "Your Next Goal is"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoalNumber" type="Label" parent="TextureRect" unique_id=940944160]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.02745098, 0.7764706, 0, 1)
+theme_override_font_sizes/font_size = 52
+text = "$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1768140629]
+wait_time = 2.0
+one_shot = true
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=174080953]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.209
+anchor_top = 0.149
+anchor_right = 0.795
+anchor_bottom = 0.31
+offset_left = 0.47998047
+offset_top = -0.2800064
+offset_right = 0.39996338
+offset_bottom = -0.19999695
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_y76q7")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

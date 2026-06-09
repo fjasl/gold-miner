@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bx8o328tv7wf8"]
+
+[ext_resource type="Script" uid="uid://2nksr1yifr6d" path="res://scene/item_base.gd" id="1_37hjb"]
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_p1eb2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_37hjb"]
+atlas = ExtResource("1_p1eb2")
+region = Rect2(1, 939, 201, 208)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jj3x4"]
+radius = 105.080925
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1eb2"]
+atlas = ExtResource("1_p1eb2")
+region = Rect2(727, 1042, 72, 69)
+
+[node name="BigGold" type="Node2D" unique_id=1474722169]
+script = ExtResource("1_37hjb")
+difficulty = 5
+value = 900
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1206736099]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1975178580]
+texture = SubResource("AtlasTexture_37hjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1099822350]
+shape = SubResource("CircleShape2D_jj3x4")
+
+[node name="Hooked" type="Sprite2D" parent="." unique_id=235427966]
+scale = Vector2(1.6521736, 1.6521738)
+texture = SubResource("AtlasTexture_p1eb2")

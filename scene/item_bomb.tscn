@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dpnnokrtrwu30"]
+
+[ext_resource type="Script" uid="uid://bbh66g68ijxtt" path="res://scene/goods_base.gd" id="1_5hhu4"]
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_57u0c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q35qr"]
+atlas = ExtResource("1_57u0c")
+region = Rect2(994, 557, 27, 52)
+
+[node name="ItemBomb" type="Node2D" unique_id=1429165231]
+script = ExtResource("1_5hhu4")
+price_base = 100
+type = 3
+detail = "After you have grabbed onto something with yourclaw, press the up arrow to throw a pieceof dynamite at it and blow it up."
+
+[node name="Item" type="Sprite2D" parent="." unique_id=1754875535]
+texture = SubResource("AtlasTexture_q35qr")

@@ -1,0 +1,183 @@
+[gd_scene format=3 uid="uid://dbdg3wavjnmje"]
+
+[ext_resource type="Texture2D" uid="uid://dte27b0yxo7yl" path="res://resource/minerFrame/atlas_12.png" id="1_8cjr3"]
+[ext_resource type="Texture2D" uid="uid://bo6o0wjgtxrbt" path="res://resource/minerFrame/atlas_boom_2.png" id="1_8l213"]
+[ext_resource type="Texture2D" uid="uid://jukpn8sl8coh" path="res://resource/minerFrame/atlas_7.png" id="1_eu1rr"]
+[ext_resource type="Script" uid="uid://fqaqh05lf41o" path="res://scene/miner.gd" id="1_hswhl"]
+[ext_resource type="Texture2D" uid="uid://b7tumtclnnr37" path="res://resource/minerFrame/atlas_2.png" id="2_t1y0h"]
+[ext_resource type="Texture2D" uid="uid://cklkymnms60bs" path="res://resource/minerFrame/atlas_boom_3.png" id="2_w6toq"]
+[ext_resource type="Texture2D" uid="uid://d0k8xql0r582g" path="res://resource/minerFrame/atlas_16.png" id="2_xajb2"]
+[ext_resource type="Texture2D" uid="uid://dghi6gqys1fcv" path="res://resource/minerFrame/atlas_13.png" id="3_2envy"]
+[ext_resource type="Texture2D" uid="uid://cp7p83ygpimjp" path="res://resource/minerFrame/atlas_boom.png" id="3_hswhl"]
+[ext_resource type="Texture2D" uid="uid://cvr0j7ppgboh5" path="res://resource/minerFrame/atlas_14.png" id="4_6ensq"]
+[ext_resource type="Texture2D" uid="uid://n0upfifpe5x0" path="res://resource/minerFrame/atlas_boom_4.png" id="4_rn46l"]
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="11_w6toq"]
+[ext_resource type="Texture2D" uid="uid://dm2x7mn6khn4v" path="res://resource/explode/3.png" id="13_2f74c"]
+[ext_resource type="Texture2D" uid="uid://bmm0qr0cghtsn" path="res://resource/minerFrame/atlas_1.png" id="13_kg5yf"]
+[ext_resource type="Texture2D" uid="uid://blsb1rvm0ixwk" path="res://resource/explode/4.png" id="14_dkbp5"]
+[ext_resource type="Texture2D" uid="uid://bjontqdir0d1g" path="res://resource/minerFrame/atlas_4.png" id="14_waodl"]
+[ext_resource type="Texture2D" uid="uid://cg51pqy1ym5fj" path="res://resource/explode/6.png" id="15_2vkth"]
+[ext_resource type="Texture2D" uid="uid://cd1rb4csqm8wt" path="res://resource/minerFrame/atlas_8.png" id="15_hod8y"]
+[ext_resource type="Texture2D" uid="uid://nyeaa65m1adn" path="res://resource/explode/8.png" id="16_kg5yf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f74c"]
+atlas = ExtResource("11_w6toq")
+region = Rect2(834, 946, 116, 59)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3602"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("1_8l213")
+}, {
+"duration": 0.5,
+"texture": ExtResource("2_w6toq")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_hswhl")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_rn46l")
+}],
+"loop": false,
+"name": &"bomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8cjr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xajb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2envy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ensq")
+}],
+"loop": true,
+"name": &"end",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_8cjr3")
+}, {
+"duration": 2.0,
+"texture": ExtResource("2_xajb2")
+}, {
+"duration": 2.0,
+"texture": ExtResource("3_2envy")
+}, {
+"duration": 2.0,
+"texture": ExtResource("4_6ensq")
+}],
+"loop": true,
+"name": &"end_hard",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eu1rr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eu1rr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_t1y0h")
+}],
+"loop": true,
+"name": &"start",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_kg5yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_waodl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hod8y")
+}],
+"loop": false,
+"name": &"strength",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hswhl"]
+atlas = ExtResource("11_w6toq")
+region = Rect2(987, 759, 27, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn46l"]
+size = Vector2(23, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_waodl"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("13_2f74c")
+}, {
+"duration": 0.5,
+"texture": ExtResource("14_dkbp5")
+}, {
+"duration": 0.5,
+"texture": ExtResource("15_2vkth")
+}, {
+"duration": 0.5,
+"texture": ExtResource("16_kg5yf")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}]
+
+[node name="Miner" type="Node2D" unique_id=1477855428]
+script = ExtResource("1_hswhl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=158988137]
+position = Vector2(0, -2)
+scale = Vector2(1.15, 1.15)
+texture = SubResource("AtlasTexture_2f74c")
+
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1874570717]
+sprite_frames = SubResource("SpriteFrames_p3602")
+animation = &"bomb"
+
+[node name="HookPivot" type="Node2D" parent="." unique_id=1984314924]
+position = Vector2(-12, 9)
+
+[node name="Line2D" type="Line2D" parent="HookPivot" unique_id=1990055758]
+position = Vector2(0, 0.057142913)
+scale = Vector2(1, 1.0285715)
+points = PackedVector2Array(0, 0, -4, 40.77777)
+width = 2.0
+default_color = Color(0.1882353, 0.1882353, 0.1882353, 1)
+
+[node name="Claw" type="Area2D" parent="HookPivot" unique_id=1733790483]
+position = Vector2(-3, 36)
+
+[node name="Sprite2D" type="Sprite2D" parent="HookPivot/Claw" unique_id=1314436767]
+position = Vector2(-1, 11)
+texture = SubResource("AtlasTexture_hswhl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HookPivot/Claw" unique_id=232396362]
+visible = false
+position = Vector2(-1, 10)
+shape = SubResource("RectangleShape2D_rn46l")
+
+[node name="BlowOut" type="AnimatedSprite2D" parent="HookPivot/Claw" unique_id=1136976947]
+visible = false
+sprite_frames = SubResource("SpriteFrames_waodl")
+animation = &"explode"
+frame = 3
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="Body" to="." method="_on_body_animation_finished"]
+[connection signal="animation_looped" from="Body" to="." method="_on_body_animation_looped"]

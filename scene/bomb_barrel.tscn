@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://6lc6ydf55mfh"]
+
+[ext_resource type="Script" uid="uid://2nksr1yifr6d" path="res://scene/item_base.gd" id="1_2xyep"]
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_tgeyw"]
+[ext_resource type="Texture2D" uid="uid://cg51pqy1ym5fj" path="res://resource/explode/6.png" id="2_12vwh"]
+[ext_resource type="Texture2D" uid="uid://ihkwtd3ff32h" path="res://resource/explode/7.png" id="3_2xyep"]
+[ext_resource type="Texture2D" uid="uid://nyeaa65m1adn" path="res://resource/explode/8.png" id="4_5u1ur"]
+[ext_resource type="Texture2D" uid="uid://bxp000awof8w0" path="res://resource/explode/9.png" id="5_366ru"]
+[ext_resource type="Texture2D" uid="uid://b1r3vct0owdy0" path="res://resource/explode/10.png" id="6_2mvkb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukwka"]
+atlas = ExtResource("1_tgeyw")
+region = Rect2(398, 251, 42, 52)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgjwj"]
+radius = 19.0
+height = 48.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgeyw"]
+atlas = ExtResource("1_tgeyw")
+region = Rect2(987, 776, 20, 37)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tgeyw"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": ExtResource("2_12vwh")
+}, {
+"duration": 0.5,
+"texture": ExtResource("3_2xyep")
+}, {
+"duration": 0.5,
+"texture": ExtResource("4_5u1ur")
+}, {
+"duration": 0.5,
+"texture": ExtResource("5_366ru")
+}, {
+"duration": 0.5,
+"texture": ExtResource("6_2mvkb")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 5.0
+}]
+
+[node name="BombBarrel" type="Node2D" unique_id=1651747749]
+script = ExtResource("1_2xyep")
+value = 2
+hooked_event = 1
+sound_tag = "cool"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1587821281]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1186689717]
+texture = SubResource("AtlasTexture_ukwka")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1634499318]
+shape = SubResource("CapsuleShape2D_pgjwj")
+
+[node name="Hooked" type="Sprite2D" parent="." unique_id=85834325]
+visible = false
+texture = SubResource("AtlasTexture_tgeyw")
+
+[node name="Event" type="AnimatedSprite2D" parent="." unique_id=2110009635]
+visible = false
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_tgeyw")
+animation = &"explode"
+frame = 4
+frame_progress = 1.0

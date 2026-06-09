@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://b12drmdxyp6h"]
+
+[ext_resource type="Script" uid="uid://1c6swgy1qmvw" path="res://scene/end.gd" id="1_acqqh"]
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_j5v8g"]
+[ext_resource type="FontFile" uid="uid://de1kl6vtpuktx" path="res://resource/SourceHanSansSC-Bold.otf" id="3_u4okq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acqqh"]
+atlas = ExtResource("1_j5v8g")
+region = Rect2(0, 728, 200, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5v8g"]
+atlas = ExtResource("1_j5v8g")
+region = Rect2(643, 1, 317, 145)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4okq"]
+atlas = ExtResource("1_j5v8g")
+region = Rect2(0, 141, 442, 67)
+
+[node name="end" type="Control" unique_id=349491677]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_acqqh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=96126695]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Gold" type="Sprite2D" parent="." unique_id=1584967910]
+visible = false
+texture = SubResource("AtlasTexture_acqqh")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1892171996]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -100.0
+offset_right = 225.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(225, 100)
+texture = SubResource("AtlasTexture_j5v8g")
+
+[node name="WinTitle" type="Label" parent="TextureRect" unique_id=1441936028]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_u4okq")
+theme_override_font_sizes/font_size = 37
+text = "You made it to
+the next Level!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FailTitle" type="Label" parent="TextureRect" unique_id=1804901295]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("3_u4okq")
+theme_override_font_sizes/font_size = 37
+text = "You Did Not
+Reach Your Goal"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=1770483311]
+wait_time = 2.0
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=580852592]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.20600002
+anchor_top = 0.14400001
+anchor_right = 0.795
+anchor_bottom = 0.31100002
+offset_left = 4.319977
+offset_top = 3.319992
+offset_right = 0.39996338
+offset_bottom = -0.9200134
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_u4okq")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

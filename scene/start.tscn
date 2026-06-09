@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://c83t8kyjljmi8"]
+
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_pyxt3"]
+[ext_resource type="Script" uid="uid://diaflwguvgsyi" path="res://scene/start.gd" id="1_xmel7"]
+[ext_resource type="Script" uid="uid://cpm18ycfet2u8" path="res://scene/gold_glow.gd" id="2_gbpcu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmel7"]
+atlas = ExtResource("1_pyxt3")
+region = Rect2(648, 160, 208, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyxt3"]
+atlas = ExtResource("1_pyxt3")
+region = Rect2(0, 728, 200, 208)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbpcu"]
+atlas = ExtResource("1_pyxt3")
+region = Rect2(0, 208, 392, 416)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhewb"]
+atlas = ExtResource("1_pyxt3")
+region = Rect2(728, 872, 112, 40)
+
+[node name="Start" type="Control" unique_id=1705800765]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_xmel7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=854111136]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GoldGlow" type="TextureRect" parent="." unique_id=1102490248]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.30200002
+anchor_top = 0.1
+anchor_right = 0.628
+anchor_bottom = 0.647
+offset_left = 0.09597778
+offset_top = 0.19999695
+offset_right = 0.5439453
+offset_bottom = -0.25601196
+pivot_offset = Vector2(188, 177)
+texture = SubResource("AtlasTexture_xmel7")
+script = ExtResource("2_gbpcu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Gold" type="TextureRect" parent="." unique_id=880965683]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.384
+anchor_top = 0.20700002
+anchor_right = 0.55700004
+anchor_bottom = 0.528
+offset_left = -0.36801147
+offset_top = -0.13601685
+offset_right = 0.3359375
+offset_bottom = -0.14401245
+texture = SubResource("AtlasTexture_pyxt3")
+metadata/_edit_use_anchors_ = true
+
+[node name="Character" type="TextureRect" parent="." unique_id=1428756094]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.531
+anchor_top = 0.11400001
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.28796387
+offset_top = 0.12799835
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AtlasTexture_gbpcu")
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=410655968]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.43143755
+anchor_top = 0.35183337
+anchor_right = 0.51956254
+anchor_bottom = 0.40711114
+offset_left = 0.75994873
+offset_top = -0.32002258
+offset_right = -0.039978027
+offset_bottom = -0.120025635
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_bhewb")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

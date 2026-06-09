@@ -1,0 +1,228 @@
+[gd_scene format=3 uid="uid://cwydk2pypfsc0"]
+
+[ext_resource type="Script" uid="uid://bh0x5uib8qivy" path="res://scene/GameMain.gd" id="1_v0l8b"]
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="2_wp4xf"]
+[ext_resource type="FontFile" uid="uid://de1kl6vtpuktx" path="res://resource/SourceHanSansSC-Bold.otf" id="3_brvut"]
+[ext_resource type="PackedScene" uid="uid://dbdg3wavjnmje" path="res://scene/miner.tscn" id="3_wp4xf"]
+[ext_resource type="PackedScene" uid="uid://c1mvm4g2628as" path="res://scene/bomb_collection.tscn" id="5_0ha60"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brvut"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ha60"]
+atlas = ExtResource("2_wp4xf")
+region = Rect2(843, 372, 19, 69)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0l8b"]
+atlas = ExtResource("2_wp4xf")
+region = Rect2(653, 1309, 59, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp4xf"]
+atlas = ExtResource("2_wp4xf")
+region = Rect2(713, 1314, 59, 44)
+
+[node name="Main" type="Control" unique_id=1279216093]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v0l8b")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1724855807]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ItemArea" type="TextureRect" parent="." unique_id=148420390]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = 0.3999939
+offset_right = -2.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_brvut")
+
+[node name="CharaterArea" type="TextureRect" parent="." unique_id=74455487]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = -1.6000061
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_0ha60")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CharaterArea" unique_id=1013994248]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharaterArea/MarginContainer" unique_id=129949909]
+layout_mode = 2
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CharaterArea/MarginContainer/HBoxContainer" unique_id=1541546001]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1565246591]
+layout_mode = 2
+alignment = 1
+
+[node name="Gold" type="Label" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1952745451]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.4509804, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("3_brvut")
+theme_override_font_sizes/font_size = 34
+text = "Money "
+horizontal_alignment = 2
+
+[node name="Goal" type="Label" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1550840042]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.4509804, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("3_brvut")
+theme_override_font_sizes/font_size = 34
+text = "Goal "
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="CharaterArea/MarginContainer/HBoxContainer" unique_id=74846542]
+layout_mode = 2
+alignment = 1
+
+[node name="GoldText" type="Label" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=655792233]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.6, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.0627451, 0.0627451, 0.0627451, 0.8627451)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_brvut")
+theme_override_font_sizes/font_size = 34
+text = "$0"
+
+[node name="GoalText" type="Label" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer3" unique_id=26432056]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9882353, 0.63529414, 0.039215688, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.8666667)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_brvut")
+theme_override_font_sizes/font_size = 34
+text = "$0"
+metadata/_edit_use_anchors_ = true
+
+[node name="Gap" type="HBoxContainer" parent="CharaterArea/MarginContainer/HBoxContainer" unique_id=2095756075]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharaterArea/MarginContainer/HBoxContainer/Gap" unique_id=1020810349]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureButton" parent="CharaterArea/MarginContainer/HBoxContainer/Gap" unique_id=386329182]
+custom_minimum_size = Vector2(100, 130)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_v0l8b")
+texture_pressed = SubResource("AtlasTexture_wp4xf")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="HBoxContainer" parent="CharaterArea/MarginContainer/HBoxContainer" unique_id=1014456887]
+layout_mode = 2
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=755690060]
+layout_mode = 2
+alignment = 1
+
+[node name="Time" type="Label" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=408766569]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.4509804, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("3_brvut")
+theme_override_font_sizes/font_size = 34
+text = "Time: "
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Level" type="Label" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1926340706]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.57254905, 0.4509804, 0.011764706, 1)
+theme_override_fonts/font = ExtResource("3_brvut")
+theme_override_font_sizes/font_size = 34
+text = "Level: "
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1303537481]
+layout_mode = 2
+alignment = 1
+
+[node name="TimeText" type="Label" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=155987954]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.98039216)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_brvut")
+theme_override_font_sizes/font_size = 34
+text = "0"
+
+[node name="LevelText" type="Label" parent="CharaterArea/MarginContainer/HBoxContainer/VBoxContainer2/VBoxContainer2" unique_id=962729477]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.4, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_fonts/font = ExtResource("3_brvut")
+theme_override_font_sizes/font_size = 34
+text = "0"
+
+[node name="Miner" parent="CharaterArea" unique_id=1477855428 instance=ExtResource("3_wp4xf")]
+position = Vector2(613, 93)
+
+[node name="TextureRect" type="TextureRect" parent="CharaterArea" unique_id=1067204504]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5756176
+anchor_top = 0.44201997
+anchor_right = 0.62542635
+anchor_bottom = 0.783
+offset_left = -0.4880371
+offset_top = -0.05960083
+offset_right = -0.044006348
+offset_bottom = 0.06679535
+pivot_offset = Vector2(32, 24)
+metadata/_edit_use_anchors_ = true
+
+[node name="Root" parent="CharaterArea/TextureRect" unique_id=960864449 instance=ExtResource("5_0ha60")]
+position = Vector2(31.999939, 32)
+scale = Vector2(1.5, 1.5)
+
+[node name="Timer" type="Timer" parent="." unique_id=2020751574]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="pressed" from="CharaterArea/MarginContainer/HBoxContainer/Gap/TextureRect" to="." method="_on_texture_rect_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

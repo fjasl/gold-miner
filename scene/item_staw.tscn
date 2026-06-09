@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cokn56ewbv78i"]
+
+[ext_resource type="Script" uid="uid://bbh66g68ijxtt" path="res://scene/goods_base.gd" id="1_3ls0f"]
+[ext_resource type="Texture2D" uid="uid://cjv5nt70sfg2y" path="res://resource/atlas.png" id="1_at8oo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ls0f"]
+atlas = ExtResource("1_at8oo")
+region = Rect2(399, 380, 37, 66)
+
+[node name="ItemStaw" type="Node2D" unique_id=37230705]
+script = ExtResource("1_3ls0f")
+price_base = 150
+type = 2
+detail = "Lucky Clover.This will increase the chances of gettingsomething good out of the grab bags on the next level.This is only good for one level."
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=275041778]
+texture = SubResource("AtlasTexture_3ls0f")
